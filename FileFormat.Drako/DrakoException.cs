@@ -9,7 +9,13 @@ namespace FileFormat.Drako
     /// <summary>
     /// Exception when failed to encode or decode draco files.
     /// </summary>
-    public class DrakoException : Exception
+    
+#if DRACO_EMBED_MODE
+    internal
+#else
+    public
+#endif
+        class DrakoException : Exception
     {
     }
 }
