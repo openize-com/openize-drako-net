@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileFormat.Drako\FileFormat.Drako.csproj" />
+    <ProjectReference Include="..\Openize.Drako\Openize.Drako.csproj" />
   </ItemGroup>
 </Project>

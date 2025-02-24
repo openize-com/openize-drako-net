@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileFormat.Drako", "FileFormat.Drako\FileFormat.Drako.csproj", "{7BE91B4D-FCC1-426D-B8CE-A84DAFE97431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Openize.Drako", "Openize.Drako\Openize.Drako.csproj", "{7BE91B4D-FCC1-426D-B8CE-A84DAFE97431}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileFormat.Drako.Tests", "FileFormat.Drako.Tests\FileFormat.Drako.Tests.csproj", "{04E60C38-DA04-4645-B3ED-366DBF809F39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Openize.Drako.Tests", "Openize.Drako.Tests\Openize.Drako.Tests.csproj", "{04E60C38-DA04-4645-B3ED-366DBF809F39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileFormat.Drako.App", "FileFormat.Drako.App\FileFormat.Drako.App.csproj", "{A4077255-D2D0-4FFB-BD10-4B650989E935}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Openize.Drako.App", "Openize.Drako.App\Openize.Drako.App.csproj", "{A4077255-D2D0-4FFB-BD10-4B650989E935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

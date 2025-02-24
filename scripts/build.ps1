@@ -15,13 +15,13 @@ if("${Env:CERT_FILE}" -eq "" -or !(Test-Path ${Env:CERT_FILE}))
     return
 }
 
-$Version=Select-Xml -Path ..\FileFormat.Drako\FileFormat.Drako.csproj -XPath '/Project/PropertyGroup/Version' | ForEach-Object { $_.Node.InnerXML }
-$nupkg="bin\Release\FileFormat.Drako.$Version.nupkg"
+$Version=Select-Xml -Path ..\Openize.Drako\Openize.Drako.csproj -XPath '/Project/PropertyGroup/Version' | ForEach-Object { $_.Node.InnerXML }
+$nupkg="bin\Release\Openize.Drako.$Version.nupkg"
 
-Write-Host "Building FileFormat.Drako Version $Version"
+Write-Host "Building Openize.Drako Version $Version"
 try
 {
-    Push-Location ../FileFormat.Drako
+    Push-Location ../Openize.Drako
     dotnet clean
     if(Test-Path $nupkg) {
         Remove-Item $nupkg

@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<RootNamespace>FileFormat.Drako</RootNamespace>
+		<RootNamespace>Openize.Drako</RootNamespace>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-		<PackageId>FileFormat.Drako</PackageId>
+		<PackageId>Openize.Drako</PackageId>
         <PackageIcon>icon.png</PackageIcon>
-		<Version>1.4.1</Version>
+		<Version>1.4.2</Version>
 		<PackageTags>Draco;Google Draco;3D;Compression;Openize;File Format</PackageTags>
 		<Description>
 			This library was ported from Google Draco, allows users to efficiently compress and decompress 3D data in .NET.
@@ -14,10 +14,10 @@
 		</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <RepositoryUrl>https://github.com/fileformat-drako/FileFormat.Drako-for-.NET</RepositoryUrl>
-        <PackageProjectUrl>https://www.fileformat.com</PackageProjectUrl>
-        <Authors>fileformat</Authors>
-        <Copyright>(C) fileformat Pty Ltd 2024. All Rights Reserved.</Copyright>
+        <RepositoryUrl>https://github.com/openize-com/openize-drako-net</RepositoryUrl>
+        <PackageProjectUrl>https://www.openize.com</PackageProjectUrl>
+        <Authors>Openize</Authors>
+        <Copyright>(C) Openize Pty Ltd 2025. All Rights Reserved.</Copyright>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<Optimize>false</Optimize>

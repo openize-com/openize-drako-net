@@ -1,20 +1,20 @@
-# FileFormat.Drako
+# Openize.Drako
 
 
-FileFormat.Drako was ported from [Google Draco](https://github.com/google/draco).
+Openize.Drako was ported from [Google Draco](https://github.com/google/draco).
 
 
 ### 1. Installation
 
 ```
-dotnet add package FileFormat.Drako
+dotnet add package Openize.Drako
 ```
 
 
 ### 2. Example
 
 ```csharp
-using FileFormat.Drako;
+using Openize.Drako;
 Vector3[] controlPoints = new Vector3[]
 {
         new Vector3( -5, 0, 5.0f),
@@ -50,18 +50,18 @@ mesh.NumPoints = 8;
 //mesh.DeduplicatePointIds();
 
 var opt = new DracoEncodeOptions();
-var drcBytes = FileFormat.Draco.Draco.Encode(mesh, opt);
+var drcBytes = Openize.Draco.Draco.Encode(mesh, opt);
 ```
 
 ## License
-FileFormat.Drako is available under [Openize License](LICENSE).
+Openize.Drako is available under [Openize License](LICENSE).
 > [!CAUTION]
-> FileFormat does not and cannot grant You a patent license for the utilization of [Google Draco](https://github.com/google/draco) compression/decompression technologies.
+> Openize does not and cannot grant You a patent license for the utilization of [Google Draco](https://github.com/google/draco) compression/decompression technologies.
 
 ## OSS Notice
-Sample files used for tests and located in the "./FileFormat.Drako.Tests/TestsData" folder belong to [Google Draco](https://github.com/google/draco) and are used according to [Apache License 2.0](https://github.com/google/draco/blob/main/LICENSE)
+Sample files used for tests and located in the "./Openize.Drako.Tests/TestsData" folder belong to [Google Draco](https://github.com/google/draco) and are used according to [Apache License 2.0](https://github.com/google/draco/blob/main/LICENSE)
 
 
 ## Coming updates
-FileFormat.Drako will receive new features and regular updates to stay in sync with the latest versions of [Google Draco](https://github.com/google/draco). We appreciate your patience as we work on these improvements. Stay tuned for more updates soon.
+Openize.Drako will receive new features and regular updates to stay in sync with the latest versions of [Google Draco](https://github.com/google/draco). We appreciate your patience as we work on these improvements. Stay tuned for more updates soon.
 
