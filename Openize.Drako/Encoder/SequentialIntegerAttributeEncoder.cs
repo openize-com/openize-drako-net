@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using FileFormat.Drako.Compression;
-using FileFormat.Drako.Utils;
+using Openize.Drako.Compression;
+using Openize.Drako.Utils;
 
-namespace FileFormat.Drako.Encoder
+namespace Openize.Drako.Encoder
 {
 
     /// <summary>

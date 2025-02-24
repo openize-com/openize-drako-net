@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileFormat.Drako
+namespace Openize.Drako
 {
 #if CSPORTER && !DRACO_EMBED_MODE
     public struct Vector2

@@ -1,11 +1,11 @@
-﻿using FileFormat.Drako.Compression;
+﻿using Openize.Drako.Compression;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FileFormat.Drako.Utils;
+using Openize.Drako.Utils;
 
-namespace FileFormat.Drako.Encoder
+namespace Openize.Drako.Encoder
 {
     /// <summary>
     /// A base class for encoding attribute values of a single attribute using a

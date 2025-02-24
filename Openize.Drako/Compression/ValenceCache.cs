@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileFormat.Drako.Compression
+namespace Openize.Drako.Compression
 {
 
     // ValenceCache provides support for the caching of valences off of some kind of

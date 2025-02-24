@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
-namespace FileFormat.Drako.App
+namespace Openize.Drako.App
 {
     class Args
     {
@@ -58,7 +58,7 @@ namespace FileFormat.Drako.App
         static void Help()
         {
             Console.WriteLine("  Convert a .drc file to .obj");
-            Console.WriteLine("    FileFormat.Drako.App -i [input-file] -o [output-file]");
+            Console.WriteLine("    Openize.Drako.App -i [input-file] -o [output-file]");
         }
         static void ConvertToObj(string inputFile, string outputFile)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileFormat.Drako.Encoder
+namespace Openize.Drako.Encoder
 {
     /// <summary>
     /// Class implements the edge breaker geometry compression method as described

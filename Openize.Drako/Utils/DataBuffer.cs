@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace FileFormat.Drako.Utils
+namespace Openize.Drako.Utils
 {
     /// <summary>
     /// Heap version of Span.

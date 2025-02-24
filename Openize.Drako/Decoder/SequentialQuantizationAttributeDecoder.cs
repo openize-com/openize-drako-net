@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using FileFormat.Drako.Utils;
+using Openize.Drako.Utils;
 
-namespace FileFormat.Drako.Decoder
+namespace Openize.Drako.Decoder
 {
     class SequentialQuantizationAttributeDecoder : SequentialIntegerAttributeDecoder
     {

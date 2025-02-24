@@ -4,9 +4,9 @@ using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
-using FileFormat.Drako.Utils;
+using Openize.Drako.Utils;
 
-namespace FileFormat.Drako
+namespace Openize.Drako
 {
 #if DRACO_EMBED_MODE
     internal

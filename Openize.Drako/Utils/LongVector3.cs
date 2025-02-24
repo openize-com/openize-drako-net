@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileFormat.Drako.Utils
+namespace Openize.Drako.Utils
 {
     struct IntVector
     {

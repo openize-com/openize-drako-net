@@ -1,9 +1,9 @@
-﻿using FileFormat.Drako.Utils;
+﻿using Openize.Drako.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FileFormat.Drako.Decoder
+namespace Openize.Drako.Decoder
 {
     class DracoLoadOptions
     {

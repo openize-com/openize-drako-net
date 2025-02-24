@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileFormat.Drako.Encoder
+namespace Openize.Drako.Encoder
 {
     /// <summary>
     /// Abstract base class for all mesh encoders. It provides some basic

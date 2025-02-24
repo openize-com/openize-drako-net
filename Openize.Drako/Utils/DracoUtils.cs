@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace FileFormat.Drako.Utils
+namespace Openize.Drako.Utils
 {
     class DracoUtils
     {

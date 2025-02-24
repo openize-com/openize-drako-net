@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FileFormat.Drako.Utils;
-using FileFormat.Drako.Compression;
+using Openize.Drako.Utils;
+using Openize.Drako.Compression;
 
-namespace FileFormat.Drako
+namespace Openize.Drako
 {
     /// <summary>
     /// CornerTable is used to represent connectivity of triangular meshes.

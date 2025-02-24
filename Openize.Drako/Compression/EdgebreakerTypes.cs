@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileFormat.Drako.Compression
+namespace Openize.Drako.Compression
 {
     /// <summary>
     /// Struct used for storing data about a source face that connects to an
