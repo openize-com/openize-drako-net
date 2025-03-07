@@ -34,7 +34,7 @@ try
         Write-Host "Build failed."
         return
     }
-    Write-Host "Signing the package"
+    Write-Host "Signing the package $nupkg"
     dotnet nuget sign $nupkg --certificate-path ${Env:CERT_FILE} --certificate-password ${Env:CERT_PASSWD} --timestamper ${Env:TIMESTAMPER_URL}
 
 }
