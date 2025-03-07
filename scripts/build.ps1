@@ -1,4 +1,8 @@
 $EnvScript = ".build.env.ps1"
+$OutputDir = "..\output"
+
+
+
 
 if(Test-Path $EnvScript)
 {
@@ -34,11 +38,32 @@ try
         Write-Host "Build failed."
         return
     }
-    Write-Host "Signing the package $nupkg"
+    Write-Host "Signing the NuGet package"
     dotnet nuget sign $nupkg --certificate-path ${Env:CERT_FILE} --certificate-password ${Env:CERT_PASSWD} --timestamper ${Env:TIMESTAMPER_URL}
+
+    if(!(Test-Path $OutputDir))
+    {
+        New-Item -Type Directory $OutputDir > $null
+    }
+    $Output="$OutputDir\$(Split-Path $nupkg -Leaf)"
+    if(Test-Path $Output)
+    {
+        Remove-Item $Output
+    }
+    Move-Item $nupkg $Output
+    Write-Host "Output file: $Output"
 
 }
 finally
 {
     Pop-Location
 }
+$clean_dirs = @( "..\Openize.Drako\bin", "..\Openize.Drako\obj", "..\Openize.Drako.App\bin", "..\Openize.Drako.App\obj", "..\Openize.Drako.Tests\bin", "..\Openize.Drako.Tests\obj")
+foreach($dir in $clean_dirs)
+{
+    if(Test-Path $dir)
+    {
+        Remove-Item -Recurse -Force $dir
+    }
+}
+
