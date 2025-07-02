@@ -58,21 +58,21 @@ namespace Openize.Drako
             if (x == 0)
             {
                 this.offset = offset - 1;
-                state = (uint) (buf[this.offset - 1] & 0x3F);
+                state = (uint) (buf[offset - 1] & 0x3F);
             }
             else if (x == 1)
             {
                 if (offset < 2)
                     return 1;
                 this.offset = offset - 2;
-                state = (uint)buf.ToUInt16LE(this.offset) & 0x3FFF;
+                state = (uint)buf.ToUInt16LE(offset - 2) & 0x3FFF;
             }
             else if (x == 2)
             {
                 if (offset < 3)
                     return 1;
                 this.offset = offset - 3;
-                state = buf.ToUInt24LE(this.offset) & 0x3FFFFF;
+                state = buf.ToUInt24LE(offset - 3) & 0x3FFFFF;
             }
             else
             {
