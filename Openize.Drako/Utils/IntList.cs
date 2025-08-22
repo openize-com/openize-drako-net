@@ -58,11 +58,15 @@ namespace Openize.Drako.Utils
         }
         public void AddRange(int[] v, int length)
         {
-            if (length > 0)
+            AddRange(v.AsSpan(0, length));
+        }
+        public void AddRange(ReadOnlySpan<int> v)
+        {
+            if (v.Length > 0)
             {
-                EnsureCapacity(count + length);
-                Array.Copy(v, 0, data, count, length);
-                count += length;
+                EnsureCapacity(count + v.Length);
+                v.CopyTo(data.AsSpan(count, v.Length));
+                count += v.Length;
             }
         }
         public void Clear()
