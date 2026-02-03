@@ -104,7 +104,8 @@ namespace Openize.Drako.Decoder
             int numValues = numEntries * numComponents;
             if (numComponents <= 0)
                 return null;
-            PreparePortableAttribute(numEntries, numComponents);
+            if(PortableAttribute == null)
+                PreparePortableAttribute(numEntries, numComponents);
             if (PortableAttribute.NumUniqueEntries == 0)
                 return null;
             var buf = PortableAttribute.Buffer.GetBuffer();
