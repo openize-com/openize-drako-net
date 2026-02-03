@@ -172,7 +172,7 @@ namespace Openize.Drako
             get { return vertexCorners.Count; }
         }
 
-        public int NumCorners
+        public override int NumCorners
         {
             get { return cornerToVertexMap.Length; }
         }

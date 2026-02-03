@@ -263,6 +263,10 @@ namespace Openize.Drako
         {
             get { return cornerTable.NumFaces; }
         }
+        public override int NumCorners
+        {
+            get { return cornerTable.NumCorners; }
+        }
 
         public override int Vertex(int corner)
         {

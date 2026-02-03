@@ -9,6 +9,7 @@ namespace Openize.Drako
     {
         public abstract int NumFaces { get; }
         public abstract int NumVertices { get; }
+        public abstract int NumCorners { get; }
 
         public static int LocalIndex(int corner)
         {

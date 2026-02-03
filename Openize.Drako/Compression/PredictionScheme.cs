@@ -95,6 +95,7 @@ namespace Openize.Drako.Compression
             PointAttribute att = source.PointCloud.Attribute(attId);
             if (method == PredictionSchemeMethod.Parallelogram ||
                 method == PredictionSchemeMethod.MultiParallelogram ||
+                method == PredictionSchemeMethod.ConstrainedMultiParallelogram ||
                 method == PredictionSchemeMethod.TexCoordsDeprecated ||
                 method == PredictionSchemeMethod.TexCoordsPortable ||
                 method == PredictionSchemeMethod.GeometricNormal)
@@ -137,24 +138,23 @@ namespace Openize.Drako.Compression
             PredictionSchemeTransform transform,
             MeshPredictionSchemeData meshData)
         {
-            if (method == PredictionSchemeMethod.Parallelogram)
+            switch (method)
             {
-                return new MeshPredictionSchemeParallelogram(attribute, transform, meshData);
+                case PredictionSchemeMethod.Parallelogram:
+                    return new MeshPredictionSchemeParallelogram(attribute, transform, meshData);
+                case PredictionSchemeMethod.MultiParallelogram:
+                    return new MeshPredictionSchemeMultiParallelogram(attribute, transform, meshData);
+                case PredictionSchemeMethod.ConstrainedMultiParallelogram:
+                    return new MeshPredictionSchemeConstrainedMultiParallelogram(attribute, transform, meshData);
+                case PredictionSchemeMethod.TexCoordsDeprecated:
+                    return new MeshPredictionSchemeTexCoords(attribute, transform, meshData);
+                case PredictionSchemeMethod.TexCoordsPortable:
+                    return new MeshPredictionSchemeTexCoordsPortableDecoder(attribute, transform, meshData);
+                case PredictionSchemeMethod.GeometricNormal:
+                    return new MeshPredictionSchemeGeometricNormal(attribute, transform, meshData);
+                default:
+                    return null;
             }
-            else if (method == PredictionSchemeMethod.MultiParallelogram)
-            {
-                return
-                    new MeshPredictionSchemeMultiParallelogram(attribute, transform, meshData);
-            }
-            else if (method == PredictionSchemeMethod.TexCoordsDeprecated)
-            {
-                return new MeshPredictionSchemeTexCoords(attribute, transform, meshData);
-            }
-            else if(method == PredictionSchemeMethod.TexCoordsPortable)
-                return new MeshPredictionSchemeTexCoordsPortableDecoder(attribute, transform, meshData);
-            else if(method == PredictionSchemeMethod.GeometricNormal)
-                return new MeshPredictionSchemeGeometricNormal(attribute, transform, meshData);
-            return null;
         }
 
 
