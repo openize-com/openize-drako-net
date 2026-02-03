@@ -90,7 +90,7 @@ namespace Openize.Drako.Compression
                 while (corner_id != CornerTable.kInvalidCornerIndex) {
                     if (MeshPredictionSchemeParallelogram.ComputeParallelogramPrediction(
                             p, corner_id, table, vertex_to_data_map, in_data, num_components,
-                            pred_vals[num_parallelograms])) {
+                            pred_vals[num_parallelograms].AsSpan())) {
                         // Parallelogram prediction applied and stored in
                         // |pred_vals[num_parallelograms]|
                         ++num_parallelograms;
@@ -233,14 +233,14 @@ namespace Openize.Drako.Compression
                     }
                 }
                 this.transform_.ComputeCorrection(in_data.Slice(dst_offset),
-                                                    best_prediction.predicted_value,
+                                                    best_prediction.predicted_value.AsSpan(),
                                                     out_corr.Slice(dst_offset), 0);
             }
             // First element is always fixed because it cannot be predicted.
             for (int i = 0; i < num_components; ++i) {
                 pred_vals[0][i] = 0;
             }
-            this.transform_.ComputeCorrection(in_data, 0, pred_vals[0], 0, out_corr, 0, 0);
+            this.transform_.ComputeCorrection(in_data, 0, pred_vals[0].AsSpan(), 0, out_corr, 0, 0);
         }
 
         /// <summary>
@@ -430,7 +430,7 @@ namespace Openize.Drako.Compression
             {
                 pred_vals[i] = new int[num_components];
             }
-            this.transform_.ComputeOriginalValue(pred_vals[0], in_corr,
+            this.transform_.ComputeOriginalValue(pred_vals[0].AsSpan(), in_corr,
                                                    out_data);
 
             var table = this.meshData.CornerTable;
@@ -456,7 +456,7 @@ namespace Openize.Drako.Compression
                 {
                     if (MeshPredictionSchemeParallelogram.ComputeParallelogramPrediction(
                             p, corner_id, table, vertex_to_data_map, out_data,
-                            num_components, pred_vals[num_parallelograms]))
+                            num_components, pred_vals[num_parallelograms].AsSpan()))
                     {
                         // Parallelogram prediction applied and stored in
                         // |pred_vals[num_parallelograms]|
@@ -536,7 +536,7 @@ namespace Openize.Drako.Compression
                         multi_pred_vals[c] /= num_used_parallelograms;
                     }
                     this.transform_.ComputeOriginalValue(
-                        multi_pred_vals, in_corr.Slice(dst_offset), out_data.Slice(dst_offset));
+                        multi_pred_vals.AsSpan(), in_corr.Slice(dst_offset), out_data.Slice(dst_offset));
                 }
             }
         }
