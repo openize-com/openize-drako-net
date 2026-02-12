@@ -6,7 +6,7 @@
 
 		<PackageId>Openize.Drako</PackageId>
         <PackageIcon>icon.png</PackageIcon>
-		<Version>1.4.4</Version>
+		<Version>26.2.0</Version>
 		<PackageTags>Draco;Google Draco;3D;Compression;Openize;File Format</PackageTags>
 		<Description>
 			This library was ported from Google Draco, allows users to efficiently compress and decompress 3D data in .NET.
