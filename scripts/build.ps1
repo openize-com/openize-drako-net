@@ -10,12 +10,12 @@ if(Test-Path $EnvScript)
 }
 if("${Env:TIMESTAMPER_URL}" -eq "")
 {
-    Write-Error "ERROR: Env: TIMESTAMPER_URL must points to a valid timestamp service url"
+    Write-Error "ERROR: Env:TIMESTAMPER_URL must points to a valid timestamp service url"
     return
 }
-if("${Env:CERT_FILE}" -eq "" -or !(Test-Path ${Env:CERT_FILE}))
+if("${Env:CERT_SUBJECT}" -eq "")
 {
-    Write-Error "ERROR: Env CERT_FILE must points to a valid certificate file file"
+    Write-Error "ERROR: Env:CERT_SUBJECT must points to a valid certificate subject name"
     return
 }
 
@@ -33,13 +33,13 @@ try
 
 
 
-    dotnet pack /p:SignTool=${Env:SIGN_TOOL} /p:CertFile=${Env:CERT_FILE} /p:CertPassword=${Env:CERT_PASSWD} /p:TimestamperUrl=${Env:TIMESTAMPER_URL}/authenticode
+    dotnet pack /p:SignTool=${Env:SIGN_TOOL} /p:CertFingerprint=${Env:CERT_FINGERPRINT} /p:TimestamperUrl=${Env:TIMESTAMPER_URL}
     if($LASTEXITCODE -eq '1') {
         Write-Host "Build failed."
         return
     }
     Write-Host "Signing the NuGet package"
-    dotnet nuget sign $nupkg --certificate-path ${Env:CERT_FILE} --certificate-password ${Env:CERT_PASSWD} --timestamper ${Env:TIMESTAMPER_URL}
+    dotnet nuget sign $nupkg --certificate-subject-name "${Env:CERT_SUBJECT}" --timestamper ${Env:TIMESTAMPER_URL}/legacy
 
     if(!(Test-Path $OutputDir))
     {

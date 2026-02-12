@@ -45,7 +45,7 @@
 		<None Include="..\icon.png" Pack="true" PackagePath="\"/>
 	</ItemGroup>
     <Target Name="SignAssembly" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Release'">
-        <Exec Command="$(SignTool) sign /fd sha256 /f $(CertFile) /p $(CertPassword) /t $(TimestamperUrl) %(IntermediateAssembly.FullPath)" />
+	    <Exec Command="$(SignTool) sign /sha1 $(CertFingerprint) /fd sha256 /tr $(TimestamperUrl) /td sha256 %(IntermediateAssembly.FullPath)" />
         <Exec Command="$(SignTool) verify /pa %(IntermediateAssembly.FullPath)" />
 
     </Target>
