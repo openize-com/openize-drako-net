@@ -217,7 +217,7 @@ namespace Openize.Drako.Utils
             if (ret.Length == 0)
                 return ret;
 #if CSPORTER
-            for(int i = 0, d = 0; i < ret.Length; i += 4, d++)
+            for(int i = 0, d = 0; d < ret.Length; i += 4, d++)
             {
                 ret[d] = Unsafe.GetFloat(array, i);
             }
