@@ -103,7 +103,6 @@ namespace Openize.Drako.Decoder
         /// Decodes a specified integer as varint. Note that the IntTypeT must be the
         /// same as the one used in the corresponding EncodeVarint() call.
         /// </summary>
-        /// <param name="out_val"></param>
         /// <param name="buffer"></param>
         /// <returns></returns>
         public static uint DecodeVarintU32(this DecoderBuffer buffer)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Openize.Drako
 {
-#if CSPORTER && !DRACO_EMBED_MODE
+#if CSPORTER && !DRACO_EMBED_MODE || __cplusplus
     public struct Vector2
     {
         public float X;

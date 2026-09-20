@@ -120,7 +120,7 @@ namespace Openize.Drako.Decoder
             if (numComponents <= 0)
                 throw DracoUtils.Failed();
             Span<int> values = GetValues(numEntries);
-            if(values == null)
+            if(values == Span<int>.Empty)
                 throw DracoUtils.Failed();
             byte compressed = inBuffer.DecodeU8();
             if (compressed > 0)

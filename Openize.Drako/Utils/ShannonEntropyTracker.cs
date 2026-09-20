@@ -9,7 +9,7 @@ namespace Openize.Drako.Utils
     /// recomputed. The class also support recomputing the entropy without actually
     /// pushing the symbols to the tracker through the Peek() method.
     /// </summary>
-    public class ShannonEntropyTracker
+    class ShannonEntropyTracker
     {
         /// <summary>
         /// Struct for holding entropy data about the symbols added to the tracker.
